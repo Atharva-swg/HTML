@@ -59,3 +59,64 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Tags</title>
+</head>
+<body>
+
+<!--Div Takes Whole Width-->    
+<div>
+    <p>hi</p>
+    <p>Hello</p>
+    <p>Welcome</p>
+</div>
+
+<!--Span Takes Limited Width -->
+<span>
+    bye
+</span>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Tags</title>
+</head>
+<body>
+    <header>
+        <pre>
+        <h1> Potfolio </h1>
+        </pre>
+    </header>
+
+    <main>
+
+        <section>education: XIE(MUMBAI) | SHBHS(MUMBAI)</section>
+        <section>experience: Student</section>
+        <article>my story</article>
+        <aside> This is ad </aside>
+
+        <!--By Doing The below work you can click on google logo and can vist to the web-->
+        <!--target="_main" is used to open the link in new tab leaving the website-->
+        <a href = "https://www.google.com" target="_main">
+        <img 
+        src = "https://tse4.mm.bing.net/th/id/OIP.D6P-BO32wCApcPIIjt6p5wHaHa?pid=Api&P=0&h=180"
+        alt = "Google Image">
+        </a>
+
+    </main>
+
+    <footer> 
+        <h5>Contact me</h5>
+    </footer>
+</body>
+</html>
