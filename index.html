@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Hotel Management</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a></li>
+                    <li><a href="#"><i class='bx bx-desktop'></i><span>Front desk</span></a></li>
+                    <li><a href="#"><i class='bx bx-user'></i><span>Guest</span></a></li>
+                    <li><a href="#"><i class='bx bx-bed'></i><span>Rooms</span></a></li>
+                    <li><a href="#"><i class='bx bx-message-rounded-dots'></i><span>Messenger</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-bottom">
+                <ul>
+                    <li><a href="#"><i class='bx bx-cog'></i><span>Settings</span></a></li>
+                    <li><a href="#"><i class='bx bx-log-out'></i><span>Logout</span></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+    <header class="header">
+        <div class="search-bar">
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="header-right">
+            <div class="user-profile">
+                <span class="notification-badge"><i class='bx bxs-bell'></i></span>
+                <img src="https://i.pravatar.cc/40?img=1" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <span class="user-name">Name</span>
+                    <span class="user-role">Admin</span>
+                </div>
+                <i class='bx bx-chevron-down' id = "dropdown-icon"></i>
+                <div id="dropdown-menu">
+                    <a href="#">Profile</a>
+                </div>
+                
+            </div>
+            <button class="create-booking-btn">create booking</button>
+        </div>
+        
+    </header>
+
+    <!-- Dashboard Page -->
+    <section id="dashboard" class="page active">
+        <h1>Dashboard</h1>
+
+        <section class="summary-cards">
+            <div class="card">
+                <div class="card-content">
+                    <p>Check in Today</p>
+                    <span class="card-number">10</span>
+                </div>
+                <div class="card-icon-wrapper" style="background-color: #e7e7ff;">
+                    <i class='bx bx-user-check' style="color: #6a6afb;"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <p>Check out Today</p>
+                    <span class="card-number">5</span>
+                </div>
+                <div class="card-icon-wrapper" style="background-color: #fff4d8;">
+                    <i class='bx bx-time' style="color: #f84141;" ></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <p>Total in hotel</p>
+                    <span class="card-number">80</span>
+                </div>
+                <div class="card-icon-wrapper" style="background-color: #dcfce7;">
+                    <i class='bx bx-hotel' style="color: #34c759;"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <p>Total rooms occupied</p>
+                    <span class="card-number">20</span>
+                </div>
+                <div class="card-icon-wrapper" style="background-color: #ffeded;">
+                    <i class='bx bx-key' style="color: #ff7676;"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="rooms-section">
+            <h2>Rooms</h2>
+            <div class="room-cards">
+                <div class="room-card">
+                    <div class="room-info">
+                        <h3>Single Sharing</h3>
+                        <p class="occupancy">2/15</p>
+                        <p class="price">₹1000/day</p>
+                    </div>
+                    <div class="card-icon-wrapper">
+                        <i class='bx bx-bed' style="color: #ff7676;"></i>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-info">
+                        <h3>Double Sharing</h3>
+                        <p class="occupancy">3/15</p>
+                        <p class="price">₹1500/day</p>
+                    </div>
+                    <div class="card-icon-wrapper">
+                        <i class='bx bx-bed' style="color: #20f25f;bg"></i>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-info">
+                        <h3>Triple Sharing</h3>
+                        <p class="occupancy">1/15</p>
+                        <p class="price">₹2000/day</p>
+                    </div>
+                    <div class="card-icon-wrapper">
+                        <i class='bx bx-bed' style="color: #5650fa;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Front Desk Page -->
+    <section id="frontdesk" class="page">
+        <h1>Front Desk</h1>
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Check-in/Check-out Management</h2>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Guest Name</th>
+                            <th>Room</th>
+                            <th>Check-in</th>
+                            <th>Check-out</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>rahul</td>
+                            <td>101</td>
+                            <td>2024-01-15</td>
+                            <td>2024-01-18</td>
+                            <td><span class="status checked-in">Checked In</span></td>
+                            <td>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Check-out</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>prashant</td>
+                            <td>104</td>
+                            <td>2024-01-16</td>
+                            <td>2024-01-20</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-success">Check-in</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Page -->
+    <section id="guest" class="page">
+        <h1>Guest Management</h1>
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Guest Information</h2>
+                <button class="btn-primary">Add New Guest</button>
+            </div>
+            <div class="guest-cards">
+                <div class="guest-card">
+                    <div class="guest-avatar">
+                        <img src="https://i.pravatar.cc/60?img=2" alt="Guest Avatar">
+                    </div>
+                    <div class="guest-info">
+                        <h3>rahul</h3>
+                        <p>rahul.doe@email.com</p>
+                        <p>+1 234-567-8900</p>
+                        <span class="guest-status active">Active</span>
+                    </div>
+                    <div class="guest-actions">
+                        <button class="btn-small">View Details</button>
+                        <button class="btn-small">Edit</button>
+                    </div>
+                </div>
+                <div class="guest-card">
+                    <div class="guest-avatar">
+                        <img src="https://i.pravatar.cc/60?img=3" alt="Guest Avatar">
+                    </div>
+                    <div class="guest-info">
+                        <h3>prashant</h3>
+                        <p>prashant.smith@email.com</p>
+                        <p>+1 234-567-8901</p>
+                        <span class="guest-status inactive">Inactive</span>
+                    </div>
+                    <div class="guest-actions">
+                        <button class="btn-small">View Details</button>
+                        <button class="btn-small">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Page -->
+    <section id="rooms" class="page">
+        <h1>Room Management</h1>
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Room Status</h2>
+                <button class="btn-primary">Add New Room</button>
+            </div>
+            <div class="room-grid">
+                <div class="room-item occupied">
+                    <div class="room-number">101</div>
+                    <div class="room-type">Single</div>
+                    <div class="room-status">Occupied</div>
+                    <div class="room-guest">rahul</div>
+                </div>
+                <div class="room-item available">
+                    <div class="room-number">102</div>
+                    <div class="room-type">Double</div>
+                    <div class="room-status">Available</div>
+                    <div class="room-guest">-</div>
+                </div>
+                <div class="room-item maintenance">
+                    <div class="room-number">103</div>
+                    <div class="room-type">Triple</div>
+                    <div class="room-status">Maintenance</div>
+                    <div class="room-guest">-</div>
+                </div>
+                <div class="room-item occupied">
+                    <div class="room-number">104</div>
+                    <div class="room-type">Single</div>
+                    <div class="room-status">Occupied</div>
+                    <div class="room-guest">prashant</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messenger Page -->
+    <section id="messenger" class="page">
+        <h1>Messenger</h1>
+        <div class="content-section">
+            <div class="messenger-container">
+                <div class="conversations-sidebar">
+                    <h3>Conversations</h3>
+                    <div class="conversation-item active">
+                        <div class="conversation-avatar">
+                            <img src="https://i.pravatar.cc/40?img=4" alt="Avatar">
+                        </div>
+                        <div class="conversation-info">
+                            <h4>Guest Support</h4>
+                            <p>How can I help you today?</p>
+                            <span class="conversation-time">2 min ago</span>
+                        </div>
+                    </div>
+                    <div class="conversation-item">
+                        <div class="conversation-avatar">
+                            <img src="https://i.pravatar.cc/40?img=5" alt="Avatar">
+                        </div>
+                        <div class="conversation-info">
+                            <h4>Room Service</h4>
+                            <p>Room cleaning completed</p>
+                            <span class="conversation-time">1 hour ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-area">
+                    <div class="chat-header">
+                        <h3>Guest Support</h3>
+                        <span class="online-status">Online</span>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message received">
+                            <p>Hello, I need help with my room key</p>
+                            <span class="message-time">2:30 PM</span>
+                        </div>
+                        <div class="message sent">
+                            <p>Of course! I'll send someone to help you right away.</p>
+                            <span class="message-time">2:31 PM</span>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" placeholder="Type your message...">
+                        <button class="btn-primary">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Settings Page -->
+    <section id="settings" class="page">
+        <h1>Settings</h1>
+        <div class="content-section">
+            <div class="settings-sections">
+                <div class="settings-section">
+                    <h3>Hotel Information</h3>
+                    <div class="form-group">
+                        <label>Hotel Name</label>
+                        <input type="text" value="Grand Hotel" placeholder="Enter hotel name">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" value="123 Main Street, Mumbai" placeholder="Enter address">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" value="+91 9876543210" placeholder="Enter phone number">
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>System Settings</h3>
+                    <div class="form-group">
+                        <label>Check-in Time</label>
+                        <input type="time" value="15:00">
+                    </div>
+                    <div class="form-group">
+                        <label>Check-out Time</label>
+                        <input type="time" value="11:00">
+                    </div>
+                    <div class="form-group">
+                        <label>Currency</label>
+                        <select>
+                            <option value="USD">INR</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-actions">
+                <button class="btn-primary">Save Changes</button>
+                <button class="btn-secondary">Reset to Default</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create New Booking</h2>
+            <form id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guestName">Guest Name *</label>
+                        <input type="text" id="guestName" name="guestName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guestEmail">Email *</label>
+                        <input type="email" id="guestEmail" name="guestEmail" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guestPhone">Phone Number *</label>
+                        <input type="tel" id="guestPhone" name="guestPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guestId">ID Number</label>
+                        <input type="text" id="guestId" name="guestId">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="roomType">Room Type *</label>
+                        <select id="roomType" name="roomType" required>
+                            <option value="">Select Room Type</option>
+                            <option value="single">Single Room</option>
+                            <option value="double">Double Room</option>
+                            <option value="triple">Triple Room</option>
+                            <option value="suite">Suite</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomNumber">Room Number</label>
+                        <select id="roomNumber" name="roomNumber">
+                            <option value="">Auto-assign</option>
+                            <option value="101">101</option>
+                            <option value="102">102</option>
+                            <option value="103">103</option>
+                            <option value="104">104</option>
+                            <option value="105">105</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkIn">Check-in Date *</label>
+                        <input type="date" id="checkIn" name="checkIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOut">Check-out Date *</label>
+                        <input type="date" id="checkOut" name="checkOut" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="adults">Adults *</label>
+                        <select id="adults" name="adults" required>
+                            <option value="1">1 Adult</option>
+                            <option value="2">2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4">4 Adults</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="children">Children</label>
+                        <select id="children" name="children">
+                            <option value="0">No Children</option>
+                            <option value="1">1 Child</option>
+                            <option value="2">2 Children</option>
+                            <option value="3">3 Children</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialRequests">Special Requests</label>
+                    <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any special requests or notes..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method *</label>
+                    <select id="paymentMethod" name="paymentMethod" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="cash">Cash</option>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="bank">Bank Transfer</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelBooking">Cancel</button>
+                    <button type="submit" class="btn-primary">Create Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Check-in Modal -->
+    <div id="checkinModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeCheckin">&times;</span>
+            <h2>New Check-in</h2>
+            <form id="checkinForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkinGuestName">Guest Name *</label>
+                        <input type="text" id="checkinGuestName" name="guestName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkinGuestEmail">Email *</label>
+                        <input type="email" id="checkinGuestEmail" name="guestEmail" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkinGuestPhone">Phone Number *</label>
+                        <input type="tel" id="checkinGuestPhone" name="guestPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkinGuestId">ID Number *</label>
+                        <input type="text" id="checkinGuestId" name="guestId" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkinRoomNumber">Room Number *</label>
+                        <select id="checkinRoomNumber" name="roomNumber" required>
+                            <option value="">Select Room</option>
+                            <option value="101">Room 101 - Single</option>
+                            <option value="102">Room 102 - Double</option>
+                            <option value="103">Room 103 - Triple</option>
+                            <option value="104">Room 104 - Single</option>
+                            <option value="105">Room 105 - Double</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkinDuration">Duration *</label>
+                        <select id="checkinDuration" name="duration" required>
+                            <option value="">Select Duration</option>
+                            <option value="1">1 Night</option>
+                            <option value="2">2 Nights</option>
+                            <option value="3">3 Nights</option>
+                            <option value="7">1 Week</option>
+                            <option value="14">2 Weeks</option>
+                            <option value="30">1 Month</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkinDate">Check-in Date *</label>
+                        <input type="date" id="checkinDate" name="checkinDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkinTime">Check-in Time *</label>
+                        <input type="time" id="checkinTime" name="checkinTime" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkinAdults">Adults *</label>
+                        <select id="checkinAdults" name="adults" required>
+                            <option value="1">1 Adult</option>
+                            <option value="2">2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4">4 Adults</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkinChildren">Children</label>
+                        <select id="checkinChildren" name="children">
+                            <option value="0">No Children</option>
+                            <option value="1">1 Child</option>
+                            <option value="2">2 Children</option>
+                            <option value="3">3 Children</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkinPayment">Payment Status *</label>
+                    <select id="checkinPayment" name="paymentStatus" required>
+                        <option value="">Select Payment Status</option>
+                        <option value="paid">Paid in Full</option>
+                        <option value="partial">Partial Payment</option>
+                        <option value="pending">Payment Pending</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkinNotes">Special Notes</label>
+                    <textarea id="checkinNotes" name="notes" rows="3" placeholder="Any special requests or notes for this guest..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelCheckin">Cancel</button>
+                    <button type="submit" class="btn-primary">Process Check-in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripte.js"></script>
+</body>
+</html>
